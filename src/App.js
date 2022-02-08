@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import 'antd/dist/antd.css';
 import './App.css';
+import ApPHeader from './Components/Common/Header';
+import { Layout } from 'antd';
+import AppHome from './views/Home';
+import NumericInputDemo from './Components/Home/NumericInputDemo';
+import RegistrationForm from './dele';
+import AppFooter from './Components/Common/Footer';
+import { Footer } from 'antd/lib/layout/layout';
+const { Header, Content } = Layout;
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Layout className="mainLayout">
+        <Header>
+          <ApPHeader />
+        </Header>
+        <Content>
+          <AppHome />
+        </Content>
+        <Footer ><AppFooter /></Footer>
+      </Layout>
+      {/* <RegistrationForm /> */}
     </div>
-  );
-}
+  )
+
+};
 
 export default App;
